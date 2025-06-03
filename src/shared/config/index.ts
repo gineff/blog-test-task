@@ -1,5 +1,5 @@
 export const ROUTES = {
   HOME: '/',
-  TODO: '/to-do',
+  TODO: '/todo',
   NOT_FOUND: '/404',
 };
