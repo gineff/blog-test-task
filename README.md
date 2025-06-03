@@ -9,3 +9,4 @@
  - добавлен path resolver @/src
  - выбрана архитектура fsd
  - создан слой app и добавлены провайдеры
+ - добавлен custom Router, провайдер hoc withRouter, добавлен слой pages и страница not-found
