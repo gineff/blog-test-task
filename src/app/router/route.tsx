@@ -1,12 +1,24 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { NavigationContext } from '@/shared/lib/navigation/context';
+import { matchPath } from '@/shared/lib';
 
-interface RouteProps {
+type RouteProps<P = {}> = {
   path: string;
-  component: React.ReactNode;
-}
+  component: React.ReactElement<P>;
+};
 
-export const Route = ({ path, component }: RouteProps) => {
+export const Route = <P extends {}>({ path, component }: RouteProps<P>) => {
   const { currentPath } = useContext(NavigationContext);
-  return currentPath === path ? component : null;
+  const match = matchPath(path, currentPath);
+
+  if (!match) return null;
+
+  if (Object.keys(match.params).length === 0) {
+    return component;
+  }
+
+  return React.cloneElement(component, {
+    ...component.props, 
+    params: match.params,
+  });
 };

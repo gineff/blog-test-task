@@ -1,12 +1,20 @@
 import { routes } from '@/app/router/routes';
+import { matchPath } from '@/shared/lib';
 import { useRouter } from '@/shared/lib/navigation/use-router';
 import { Link } from '@/shared/ui/link';
 
 export const NotFound = () => {
   const { currentPath } = useRouter();
-  const hasRoute = routes.some((route) => route.path === currentPath);
+  /*const hasRoute = routes.some((route) => route.path === currentPath);
 
   if (hasRoute) {
+    return null;
+  }*/
+   const hasMatchedRoute = routes.some((route) => {
+    return Boolean(matchPath(route.path, currentPath));
+  });
+
+  if (hasMatchedRoute) {
     return null;
   }
 

@@ -1,6 +1,6 @@
 export const ROUTES = {
   HOME: '/',
-  POST: '/post',
+  POST: '/post/:id',
   BLOG: '/blog',
   POST_CREATE: '/post/create',
   POST_EDIT: '/post/edit',
