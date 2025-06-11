@@ -1,7 +1,7 @@
 import { useReducer, type ReactNode } from 'react';
 import { initialState } from './initial-state';
-import { todoReducer } from '@/entities/todo/model/reducer';
-import type { TodoState } from '@/entities/todo/model/types';
+import { postReducer } from '@/entities/post/model/reducer';
+import type { PostState } from '@/entities/post/model/types';
 import type { ReducersMapObject, RootAction } from './types';
 import { StoreContext } from '@/shared/lib/store/context';
 
@@ -21,8 +21,8 @@ interface StoreProviderProps {
 
 export const StoreProvider = ({ children }: StoreProviderProps) => {
   const [state, dispatch] = useReducer(
-    combineReducers<{ todo: TodoState;}, RootAction>({
-      todo: todoReducer,
+    combineReducers<{ todo: PostState;}, RootAction>({
+      todo: postReducer,
     }),
     initialState,
   );

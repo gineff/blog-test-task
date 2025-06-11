@@ -1,5 +1,5 @@
-import { initialState as todoInitialState } from '@/entities/todo/model/reducer';
+import { initialState as postInitialState } from '@/entities/post/model/reducer';
 
 export const initialState: RootState = {
-  todo: todoInitialState,
+  post: postInitialState,
 };
