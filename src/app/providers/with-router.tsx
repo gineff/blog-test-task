@@ -14,9 +14,20 @@ export const withRouter = (Component: React.ComponentType) => () => {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  const navigate = (path: string) => {
-    window.history.pushState({}, '', path);
-    setCurrentPath(path);
+  const navigate = (path: string | 'back') => {
+    if (path === 'back') {
+      window.history.back();
+      window.addEventListener(
+        'popstate',
+        () => {
+          setCurrentPath(window.location.pathname);
+        },
+        { once: true },
+      );
+    } else {
+      window.history.pushState({}, '', path);
+      setCurrentPath(path);
+    }
   };
 
   return (

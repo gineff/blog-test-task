@@ -3,7 +3,7 @@ export const ROUTES = {
   POST: '/post/:id',
   BLOG: '/blog',
   POST_CREATE: '/post/create',
-  POST_EDIT: '/post/edit',
+  POST_EDIT: '/post/:id/edit',
   NOT_FOUND: '/404',
 };
 

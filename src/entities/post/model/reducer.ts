@@ -1,6 +1,8 @@
 import type { PostState, PostAction } from './types';
 
+
 export const initialState: PostState = {
+  hasLoaded: false,
   loading: false,
   error: null,
   view: 'grid',
@@ -12,7 +14,9 @@ export const postReducer = (state = initialState, action: PostAction): PostState
   switch (action.type) {
     case 'post/LOADING':
       return { ...state, loading: action.payload, error: null };
-    case 'post/SUCCESS':
+    case 'post/LOADED':
+      return { ...state, hasLoaded: true  };      
+    case 'post/SET_POSTS':
       return { ...state, loading: false, list: action.payload, error: null };
     case 'post/ERROR':
       return { ...state, loading: false, error: action.payload };

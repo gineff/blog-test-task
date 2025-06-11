@@ -14,11 +14,21 @@ export const Link = ({ to, children, className, onClick }: LinkProps) => {
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     onClick?.();
-    navigate(to);
+    if (to === 'back') {
+      window.history.back();
+    } else if (typeof to === 'string') {
+      navigate(to);
+    }
   };
 
   return (
-    <a href={to} onClick={handleClick} className={`${className}`} rel="noopener noreferrer">
+    <a
+      href={to === 'back' ? '#' : to}
+      onClick={handleClick}
+      className={className}
+      rel={to === 'back' ? undefined : 'noopener noreferrer'}
+      aria-label={to === 'back' ? 'Назад' : undefined}
+    >
       {children}
     </a>
   );

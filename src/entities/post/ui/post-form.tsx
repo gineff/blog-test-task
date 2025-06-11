@@ -1,19 +1,27 @@
+import { generateUUID } from '@/shared/lib';
+import { useThunkDispatch } from '@/shared/lib/store/use-thunk-dispatch';
+import { Button } from '@/shared/ui/button';
+import { Link } from '@/shared/ui/link';
 import type { FC, FormEvent } from 'react';
 import { useState } from 'react';
+import { createPostThunk } from '../model/thunks/create-post';
+import { updatePostThunk } from '../model/thunks/update-post';
+import { useRouter } from '@/shared/lib/navigation/use-router';
 
 interface PostFormProps {
-  initialTitle?: string;
-  initialSummary?: string;
-  initialContent?: string;
-  onSubmit: (data: { title: string; summary: string; content: string }) => void;
+  id?: string;
+  title?: string;
+  summary?: string;
+  content?: string;
 }
 
 export const PostForm: FC<PostFormProps> = ({
-  initialTitle = '',
-  initialSummary = '',
-  initialContent = '',
-  onSubmit,
+  id,
+  title: initialTitle = '',
+  summary: initialSummary = '',
+  content: initialContent = '',
 }) => {
+  const isNewPost = !id;
   const [title, setTitle] = useState(initialTitle);
   const [summary, setSummary] = useState(initialSummary);
   const [content, setContent] = useState(initialContent);
@@ -23,8 +31,10 @@ export const PostForm: FC<PostFormProps> = ({
     summary: '',
     content: '',
   });
+  const { navigate } = useRouter();
+  const dispatch = useThunkDispatch();
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
 
     const newErrors = {
@@ -38,12 +48,27 @@ export const PostForm: FC<PostFormProps> = ({
     const hasErrors = Object.values(newErrors).some((error) => error);
     if (hasErrors) return;
 
-    onSubmit({ title: title.trim(), summary: summary.trim(), content: content.trim() });
+    const post = {
+      title: title.trim(),
+      summary: summary.trim(),
+      content: content.trim(),
+      id: id || generateUUID(),
+    };
+
+    if (isNewPost) {
+      await dispatch(createPostThunk(post));
+    } else {
+      await dispatch(updatePostThunk(post));
+    }
+    navigate('back');
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 bg-white p-4 rounded shadow">
-      <div>
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-4 bg-white p-4 rounded-lg shadow min-w-[320px] w-[560px] flex flex-col"
+    >
+      <div className="mt-4">
         <label className="block font-medium mb-1">Заголовок</label>
         <input
           type="text"
@@ -76,13 +101,13 @@ export const PostForm: FC<PostFormProps> = ({
         {errors.content && <p className="text-sm text-red-500 mt-1">{errors.content}</p>}
       </div>
 
-      <div className="text-right">
-        <button
-          type="submit"
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
-        >
+      <div className="text-left mt-auto space-x-2">
+        <Button type="submit" variant="default">
           Сохранить
-        </button>
+        </Button>
+        <Button variant="outline">
+          <Link to="back">Отмена</Link>
+        </Button>
       </div>
     </form>
   );

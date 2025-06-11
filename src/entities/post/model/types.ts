@@ -1,4 +1,5 @@
 export interface PostState {
+  hasLoaded: boolean;
   loading: boolean;
   error: string | null;
   list: Post[];

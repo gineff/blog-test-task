@@ -42,6 +42,18 @@ export const HomePage = () => {
           </ul>
         </section>
 
+        <section id="route-management" className="mb-10">
+          <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
+            <span>🔄</span> Управление маршрутами
+          </h2>
+
+          <div className="mb-6">
+            Маршруты приложения управляются через кастомный менеджер маршрутов на базе{' '}
+            <strong className="font-semibold">useContext useReducer</strong> с использованием параметров
+             <strong className="font-semibold"> /post/:id</strong>:
+          </div>
+        </section>
+
         <section id="state-management" className="mb-10">
           <h2 className="text-2xl font-semibold mb-4 flex items-center gap-2">
             <span>🔄</span> Управление состоянием
@@ -82,14 +94,10 @@ export const HomePage = () => {
                 <code className="bg-gray-200 px-1.5 py-0.5 rounded text-sm">createPostThunk</code>
               </li>
               <li>
-                <code className="bg-gray-200 px-1.5 py-0.5 rounded text-sm">
-                  updatePostThunk
-                </code>
+                <code className="bg-gray-200 px-1.5 py-0.5 rounded text-sm">updatePostThunk</code>
               </li>
               <li>
-                <code className="bg-gray-200 px-1.5 py-0.5 rounded text-sm">
-                  deletePostThunk
-                </code>
+                <code className="bg-gray-200 px-1.5 py-0.5 rounded text-sm">deletePostThunk</code>
               </li>
             </ul>
           </div>
