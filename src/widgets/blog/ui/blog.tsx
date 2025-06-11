@@ -1,14 +1,13 @@
 import type { Post } from '@/entities/post/model/types';
 import { Pagination } from '@/features/pagination/';
 import { useSelector } from '@/shared/lib/store/use-selector';
-import { generateUUID } from '@/shared/lib';
 import { selectPage, selectView } from '@/entities/post/model/selectors';
 import { PostItemCard } from '@/entities/post/ui/post-item-card';
 import { BlogPanel } from '@/features/blog-panel/ui/blog-panel';
 import { PostListItem } from '@/entities/post/ui/post-list-item';
 import { ViewWrapper } from './view-wrapper';
-import { Link } from '@/shared/ui/link';
 import type { FC } from 'react';
+import { useRouter } from '@/shared/lib/navigation/use-router';
 
 const ARTICLES_PER_PAGE = 6;
 
@@ -19,7 +18,7 @@ interface BlogWidgetProps {
 export const BlogWidget: FC<BlogWidgetProps> = ({ posts }) => {
   const page = useSelector(selectPage);
   const view = useSelector(selectView);
-
+  const { navigate } = useRouter();
   const totalPages = Math.ceil(posts.length / ARTICLES_PER_PAGE);
   const startIdx = (page - 1) * ARTICLES_PER_PAGE;
   const currentArticles = posts.slice(startIdx, startIdx + ARTICLES_PER_PAGE);
@@ -32,10 +31,14 @@ export const BlogWidget: FC<BlogWidgetProps> = ({ posts }) => {
 
       <ViewWrapper>
         {currentArticles.map((post) => (
-          <div key={post.id} className="relative">
-            <Link to={`/post/${post.id}`}>
-              <Item {...post} />
-            </Link>
+          <div
+            key={post.id}
+            className="relative cursor-pointer"
+            onClick={() => {
+              navigate(`/post/${post.id}`);
+            }}
+          >
+            <Item {...post} />
           </div>
         ))}
       </ViewWrapper>

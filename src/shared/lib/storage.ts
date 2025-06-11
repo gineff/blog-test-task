@@ -14,5 +14,7 @@ export const loadPostsFromStorage = async (): Promise<Post[]> => {
 export const savePostsToStorage = async (posts: Post[]) => {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(posts));
-  } catch {}
+  } catch (e) {
+    console.error(e);
+  }
 };

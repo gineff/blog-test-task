@@ -2,12 +2,12 @@ import React, { useContext } from 'react';
 import { NavigationContext } from '@/shared/lib/navigation/context';
 import { matchPath } from '@/shared/lib';
 
-type RouteProps<P = {}> = {
+type RouteProps<P = object> = {
   path: string;
   component: React.ReactElement<P>;
 };
 
-export const Route = <P extends {}>({ path, component }: RouteProps<P>) => {
+export const Route = <P extends object>({ path, component }: RouteProps<P>) => {
   const { currentPath } = useContext(NavigationContext);
   const match = matchPath(path, currentPath);
 
@@ -18,7 +18,7 @@ export const Route = <P extends {}>({ path, component }: RouteProps<P>) => {
   }
 
   return React.cloneElement(component, {
-    ...component.props, 
+    ...component.props,
     params: match.params,
   });
 };

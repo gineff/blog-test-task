@@ -1,6 +1,6 @@
 import type { FC, HTMLAttributes } from 'react';
 
-export interface CardContentProps extends HTMLAttributes<HTMLDivElement> {}
+export type CardContentProps = HTMLAttributes<HTMLDivElement>
 
 export const CardContent: FC<CardContentProps> = ({ children, className = '', ...props }) => {
   return (

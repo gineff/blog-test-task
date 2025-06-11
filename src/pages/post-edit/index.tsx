@@ -5,7 +5,6 @@ import {
 } from '@/entities/post/model/selectors';
 import { fetchAllPosts } from '@/entities/post/model/thunks/fetch-all';
 import { PostForm } from '@/entities/post/ui/post-form';
-import { PostView } from '@/entities/post/ui/post-view';
 import { useSelector } from '@/shared/lib/store/use-selector';
 import { useThunkDispatch } from '@/shared/lib/store/use-thunk-dispatch';
 import { Spinner } from '@/shared/ui/spinner';
@@ -44,9 +43,7 @@ export const PostEditPage: React.FC<PostEditPageProps> = ({ params }) => {
   return (
     <>
       <Header />
-      <PostForm
-        {...post}
-      />
+      <PostForm {...post} />
     </>
   );
 };

@@ -1,6 +1,5 @@
 import type { PostState, PostAction } from './types';
 
-
 export const initialState: PostState = {
   hasLoaded: false,
   loading: false,
@@ -15,7 +14,7 @@ export const postReducer = (state = initialState, action: PostAction): PostState
     case 'post/LOADING':
       return { ...state, loading: action.payload, error: null };
     case 'post/LOADED':
-      return { ...state, hasLoaded: true  };      
+      return { ...state, hasLoaded: true };
     case 'post/SET_POSTS':
       return { ...state, loading: false, list: action.payload, error: null };
     case 'post/ERROR':
@@ -23,7 +22,6 @@ export const postReducer = (state = initialState, action: PostAction): PostState
     case 'post/SET_VIEW':
       return { ...state, view: action.payload as PostState['view'] };
     case 'post/SET_PAGE':
-      console.log({ ...state, page: action.payload });
       return { ...state, page: action.payload };
     default:
       return state;
