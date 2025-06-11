@@ -32,9 +32,11 @@ export const BlogWidget: FC<BlogWidgetProps> = ({ posts }) => {
 
       <ViewWrapper>
         {currentArticles.map((post) => (
-          <Link key={post.id} to={`/post/${post.id}`}>
-            <Item title={post.title} summary={post.summary} />
-          </Link>
+          <div key={post.id} className="relative">
+            <Link to={`/post/${post.id}`}>
+              <Item {...post} />
+            </Link>
+          </div>
         ))}
       </ViewWrapper>
 

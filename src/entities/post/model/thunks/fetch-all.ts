@@ -14,7 +14,11 @@ export const fetchAllPosts = () => async (dispatch: Dispatch<RootAction>) => {
   dispatch(setLoading(true));
   try {
     const todos = await loadPostsFromStorage();
-    dispatch(setPosts([...todos, ...mockArticles]));
+    if (!todos.length) {
+      dispatch(setPosts([...mockArticles]));
+    } else {
+      dispatch(setPosts([...todos]));
+    }
   } catch (error) {
     dispatch(setError((error as Error).message || 'Ошибка загрузки из хранилища'));
   } finally {
