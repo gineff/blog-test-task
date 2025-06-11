@@ -1,5 +1,6 @@
 import { useThunkDispatch } from '@/shared/lib/store/use-thunk-dispatch';
 import { Button } from '@/shared/ui/button';
+import { Link } from '@/shared/ui/link';
 import { List, Grid, Plus } from 'lucide-react';
 
 export const BlogPanel = () => {
@@ -21,9 +22,11 @@ export const BlogPanel = () => {
         >
           <Grid className="w-4 h-4 mr-1" /> Grid
         </Button>
-        <Button>
-          <Plus className="w-4 h-4 mr-1" /> Add Article
-        </Button>
+        <Link to="/create">
+          <Button>
+            <Plus className="w-4 h-4 mr-1" /> Add Article
+          </Button>
+        </Link>
       </div>
     </div>
   );

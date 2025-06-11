@@ -46,9 +46,6 @@ export const PostEditPage: React.FC<PostEditPageProps> = ({ params }) => {
       <Header />
       <PostForm
         {...post}
-        onSubmit={(data) => {
-          console.log(data);
-        }}
       />
     </>
   );
