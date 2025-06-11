@@ -1,9 +1,9 @@
 export const ROUTES = {
   HOME: '/',
-  POST: '/POST',
-  BLOG: '/BLOG',
-  POST_CREATE: '/POST_CREATE',
-  POST_EDIT: '/POST_EDIT',
+  POST: '/post',
+  BLOG: '/blog',
+  POST_CREATE: '/post/create',
+  POST_EDIT: '/post/edit',
   NOT_FOUND: '/404',
 };
 

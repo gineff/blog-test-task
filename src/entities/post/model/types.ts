@@ -9,7 +9,8 @@ export interface PostState {
 export interface Post {
   id: string;
   title: string;
-  content: boolean;
+  summary: string;
+  content: string;
 }
 
 export type { PostAction } from './actions';

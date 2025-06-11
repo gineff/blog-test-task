@@ -583,6 +583,11 @@
   resolved "https://registry.yarnpkg.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.43.0.tgz#42a88207659e404e8ffa655cae763cbad94906ab"
   integrity sha512-SnGhLiE5rlK0ofq8kzuDkM0g7FN1s5VYY+YSMTibP7CqShxCQvqtNxTARS4xX4PFJfHjG0ZQYX9iGzI3FQh5Aw==
 
+"@tailwindcss/line-clamp@^0.4.4":
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/line-clamp/-/line-clamp-0.4.4.tgz#767cf8e5d528a5d90c9740ca66eb079f5e87d423"
+  integrity sha512-5U6SY5z8N42VtrCrKlsTAA35gy2VSyYtHWCsg1H87NU1SXnEfekTVlrga9fzUDrrHcGi2Lb5KenUWb4lRQT5/g==
+
 "@tailwindcss/node@4.1.8":
   version "4.1.8"
   resolved "https://registry.yarnpkg.com/@tailwindcss/node/-/node-4.1.8.tgz#e29187abec6194ce1e9f072208c62116a79a129b"
@@ -1532,6 +1537,11 @@ lru-cache@^5.1.1:
   integrity sha512-KpNARQA3Iwv+jTA0utUVVbrh+Jlrr1Fv0e56GGzAFOXN7dk/FviaDW8LHmK52DlcH4WP2n6gI8vN1aesBFgo9w==
   dependencies:
     yallist "^3.0.2"
+
+lucide-react@^0.514.0:
+  version "0.514.0"
+  resolved "https://registry.yarnpkg.com/lucide-react/-/lucide-react-0.514.0.tgz#6cfd792c81f8e61c0208765dc468a957039e70b4"
+  integrity sha512-HXD0OAMd+JM2xCjlwG1EGW9Nuab64dhjO3+MvdyD+pSUeOTBaVAPhQblKIYmmX4RyBYbdzW0VWnJpjJmxWGr6w==
 
 magic-string@^0.30.17:
   version "0.30.17"

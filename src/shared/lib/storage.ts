@@ -1,7 +1,7 @@
 import type { Post } from '@/entities/post/model/types';
 import { STORAGE_KEY } from '../config';
 
-export const loadTodosFromStorage = async (): Promise<Post[]> => {
+export const loadPostsFromStorage = async (): Promise<Post[]> => {
   await new Promise((res) => setTimeout(res, 300));
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
@@ -11,7 +11,7 @@ export const loadTodosFromStorage = async (): Promise<Post[]> => {
   }
 };
 
-export const saveTodosToStorage = async (posts: Post[]) => {
+export const savePostsToStorage = async (posts: Post[]) => {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(posts));
   } catch {}

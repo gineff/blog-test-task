@@ -1,7 +1,7 @@
 import type { PostState, PostAction } from '@/entities/post/model/types';
 
 export type RootState = {
-  todo: PostState;
+  post: PostState;
 };
 
 export type RootAction = PostAction; // | OtherAction | AnotherAction

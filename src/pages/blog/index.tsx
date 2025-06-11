@@ -1,3 +1,11 @@
+import { BlogWidget } from '@/widgets/blog';
+import { Header } from '@/widgets/header';
+
 export const BlogPage = () => {
-  return <div>BlogPage</div>;
-};  
+  return (
+    <>
+      <Header />
+      <BlogWidget />
+    </>
+  );
+};

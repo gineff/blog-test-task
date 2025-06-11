@@ -10,6 +10,6 @@
 - Выбрана архитектура FSD
 - Создан слой `app`, добавлены глобальные провайдеры
 - Реализован custom `Router` с HOC `withRouter`, добавлен слой `pages` и страница `not-found`
-- Создан слой `entities` с ресурсом `todo`
-  - В `todo/model` реализованы actions, reducers и selectors для кастомного Redux-хранилища (на базе `useReducer` + `useContext`)
+- Создан слой `entities` с ресурсом `post`
+  - В `post/model` реализованы actions, reducers и selectors для кастомного Redux-хранилища (на базе `useReducer` + `useContext`)
  - добавлен state-manager на основе `useReducer` и `useContext` в архитектурном стиле Redux (разделение на actions, reducer, store)

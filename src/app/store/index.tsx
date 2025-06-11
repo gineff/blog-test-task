@@ -21,8 +21,8 @@ interface StoreProviderProps {
 
 export const StoreProvider = ({ children }: StoreProviderProps) => {
   const [state, dispatch] = useReducer(
-    combineReducers<{ todo: PostState;}, RootAction>({
-      todo: postReducer,
+    combineReducers<{ post: PostState;}, RootAction>({
+      post: postReducer,
     }),
     initialState,
   );

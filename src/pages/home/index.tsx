@@ -14,8 +14,9 @@ export const HomePage = () => {
               📝 Список статей (блог) — Тестовое задание
             </h1>
             <p className="text-lg sm:text-xl text-blue-100 max-w-xl mx-auto">
-              Простое веб-приложение для управления списком статей. React, React Hooks, custom
-              Router, custom State-Manager c async thunks, хранением данных.
+              Простое веб-приложение (без использование сторонних библиотек) для управления списком
+              статей. React, React Hooks, custom Router, custom State-Manager c async thunks,
+              хранением данных.
             </p>
             <Link
               to="/blog"
@@ -78,23 +79,17 @@ export const HomePage = () => {
             <p className="mb-2">Реализована асинхронная логика:</p>
             <ul className="space-y-2 ml-4">
               <li>
-                <code className="bg-gray-200 px-1.5 py-0.5 rounded text-sm">createTodoThunk</code>
+                <code className="bg-gray-200 px-1.5 py-0.5 rounded text-sm">createPostThunk</code>
               </li>
               <li>
                 <code className="bg-gray-200 px-1.5 py-0.5 rounded text-sm">
-                  toggleAllTodosThunk
+                  updatePostThunk
                 </code>
               </li>
               <li>
                 <code className="bg-gray-200 px-1.5 py-0.5 rounded text-sm">
-                  deleteCompletedTodosThunk
+                  deletePostThunk
                 </code>
-              </li>
-              <li>
-                <code className="bg-gray-200 px-1.5 py-0.5 rounded text-sm">updateTodoThunk</code>
-              </li>
-              <li>
-                <code className="bg-gray-200 px-1.5 py-0.5 rounded text-sm">deleteTodoThunk</code>
               </li>
             </ul>
           </div>
