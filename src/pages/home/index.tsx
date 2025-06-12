@@ -15,7 +15,7 @@ export const HomePage = () => {
             </h1>
             <p className="text-lg sm:text-xl text-blue-100 max-w-xl mx-auto">
               Простое веб-приложение (без использование сторонних библиотек) для управления списком
-              новостей. React, React Hooks, custom Router, custom State-Manager c async thunks,
+              новостей. Архитектура fsd, React, React Hooks, custom Router, custom State-Manager c async thunks,
               хранением данных.
             </p>
             <Link
