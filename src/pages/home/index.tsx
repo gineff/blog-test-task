@@ -11,11 +11,11 @@ export const HomePage = () => {
 
           <div className="relative max-w-3xl mx-auto px-6 py-12 md:py-20 text-center space-y-6">
             <h1 className="text-4xl sm:text-5xl font-bold leading-tight">
-              📝 Список статей (блог) — Тестовое задание
+              📝 Список новостей (блог) — Тестовое задание
             </h1>
             <p className="text-lg sm:text-xl text-blue-100 max-w-xl mx-auto">
               Простое веб-приложение (без использование сторонних библиотек) для управления списком
-              статей. React, React Hooks, custom Router, custom State-Manager c async thunks,
+              новостей. React, React Hooks, custom Router, custom State-Manager c async thunks,
               хранением данных.
             </p>
             <Link
@@ -116,7 +116,7 @@ export const HomePage = () => {
         <section>
           <h2 className="text-2xl font-semibold mb-2">💾 Хранение данных</h2>
           <div className="text-gray-700">
-            Список статей хранится в <strong className="font-semibold">localStorage</strong>.{' '}
+            Список новостей хранится в <strong className="font-semibold">localStorage</strong>.{' '}
             Архитектура приложения позволяет легко расширить функционал до{' '}
             <strong className="font-semibold">REST API</strong> или другого источника данных.
           </div>
@@ -146,21 +146,21 @@ export const HomePage = () => {
                     <code>PostList</code>
                   </td>
                   <td className="px-4 py-3 text-sm text-gray-800">
-                    Список статей с возможностью добавления новой статьи, редактирования и удаления
+                    Список новостей с возможностью добавления новой статьи, редактирования и удаления
                   </td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3 text-sm font-mono text-blue-600 whitespace-nowrap">
                     <code>Pagination</code>
                   </td>
-                  <td className="px-4 py-3 text-sm text-gray-800">Пагинация для списка статей</td>
+                  <td className="px-4 py-3 text-sm text-gray-800">Пагинация для списка новостей</td>
                 </tr>
                 <tr>
                   <td className="px-4 py-3 text-sm font-mono text-blue-600 whitespace-nowrap">
                     <code>ViewToggle</code>
                   </td>
                   <td className="px-4 py-3 text-sm text-gray-800">
-                    Переключение вида просмотра списка статей, в виде списка или таблицы
+                    Переключение вида просмотра списка новостей, в виде списка или таблицы
                   </td>
                 </tr>
               </tbody>
